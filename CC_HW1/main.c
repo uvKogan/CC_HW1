@@ -2,12 +2,24 @@
 // Project - DNS Client
 // Description - main file of the DNS Client - include headers and call main functions
 
+// Project Includes
+
+#include "DNSClient.h"
+//#include "Functions.c"
 // Library Includes
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
 // Project Includes
 #include "Defines.h"
-#include "DNSClient.h"
+
+// gethostbyname example includes
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
+#pragma comment(lib, "ws2_32.lib")
+
 
 // Description - main function the DNS Client - user interface
 // Parameters - receives as a parameter ServerIp, ServerPort 
@@ -20,4 +32,12 @@ int main(int argc, char *argv[]) {
 	int two = 2;
 	sum = two + two;
 	printf("2+2=%d\n", sum);
+
+	// gethostbyname example
+	char *host_name;
+	host_name = argv[1];
+	int host_answer;
+	host_answer = GetHostByName1(host_name);
+	return host_answer; // 0 if successful
 };
+
