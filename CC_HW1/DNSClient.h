@@ -4,10 +4,10 @@
 
 #ifndef SOCKET_EXAMPLE_CLIENT_H
 struct hostent GetHostByName1(const char *host_name);
-struct hostent dnsQuery(const char *input_address);
+struct hostent dnsQuery(const char *host_name);
 int CheckValidInput(const char *input_string);
 int CheckIfQuit(const char *input_string);
-
+void ConvertDomain(unsigned char* dest, unsigned char* source);
 
 //typedef struct hostent {
 //	char  *h_name;
